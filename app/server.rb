@@ -26,5 +26,9 @@ post '/messages' do
   number = params["phone-number"]
   exchange = Exchange.new(visitor_phone: number)
   Message.create(text: text, exchange: exchange)
-  redirect to('/')
+  redirect to('/sent')
+end
+
+get '/sent' do
+	erb :sent
 end

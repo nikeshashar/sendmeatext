@@ -10,8 +10,8 @@ require 'spec_helper'
     scenario "through the form" do
       visit '/'
       add_message("Howdy site owner, are you free this Friday?", "00447762432346")
+      expect(page).to have_content("Your message was sent!")
     end
-
   end
 
   feature "Information saved to the database" do
@@ -32,5 +32,12 @@ require 'spec_helper'
       exchange = Exchange.first
       expect(exchange.visitor_phone).to eq("00447762432346")
     end
-
   end
+
+  # feature "form validations" do
+  #   scenario "no phone number provided by sender" do
+
+
+  #   end
+
+  # end
