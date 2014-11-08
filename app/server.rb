@@ -24,7 +24,7 @@ end
 post '/messages' do
   text = params["text-box"]
   number = params["phone-number"]
-  exchange = Exchange.new(visitor_phone: number)
+  exchange = Exchange.create(visitor_phone: number)
   Message.create(text: text, exchange: exchange)
   redirect to('/sent')
 end

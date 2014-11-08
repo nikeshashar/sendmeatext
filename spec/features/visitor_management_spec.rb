@@ -10,6 +10,7 @@ require 'spec_helper'
     scenario "through the form" do
       visit '/'
       add_message("Howdy site owner, are you free this Friday?", "00447762432346")
+      expect(current_path).to eq '/sent'
       expect(page).to have_content("Your message was sent!")
     end
   end
@@ -33,11 +34,3 @@ require 'spec_helper'
       expect(exchange.visitor_phone).to eq("00447762432346")
     end
   end
-
-  # feature "form validations" do
-  #   scenario "no phone number provided by sender" do
-
-
-  #   end
-
-  # end
