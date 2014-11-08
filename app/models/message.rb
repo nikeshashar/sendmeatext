@@ -8,6 +8,7 @@ class Message
   property :text,         String
   property :time_stamp,   DateTime
   property :from_owner,   Boolean
-  property :thread_id,    Serial
+  
+  belongs_to :thread
   
 end
