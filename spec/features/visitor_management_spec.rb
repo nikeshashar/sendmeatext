@@ -25,12 +25,12 @@ require 'spec_helper'
     end
 
     scenario "phone number saved" do
-      expect(Message.count).to eq(0)
+      expect(Exchange.count).to eq(0)
       visit '/'
       add_message("Howdy site owner, are you free this Friday?", "00447762432346")
-      expect(Message.count).to eq(1)
-      message = Message.first
-      expect(message.phone_number).to eq("00447762432346")
+      expect(Exchange.count).to eq(1)
+      exchange = Exchange.first
+      expect(exchange.visitor_phone).to eq("00447762432346")
     end
 
   end

@@ -8,7 +8,10 @@ class Message
   property :text,         String
   property :time_stamp,   DateTime
   property :from_owner,   Boolean
+  property :exchange_id,  Integer
   
-  belongs_to :thread
+  belongs_to :exchange
+
+
   
 end
