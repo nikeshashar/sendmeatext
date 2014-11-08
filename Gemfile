@@ -7,6 +7,7 @@ gem 'dm-postgres-adapter'
 gem 'thin'
 gem 'sinatra'
 gem 'sinatra-partial'
+gem 'twilio-ruby', '~> 3.12'
 
 group :development, :test do
   gem 'shotgun'
