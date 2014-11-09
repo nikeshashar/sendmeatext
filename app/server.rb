@@ -31,6 +31,9 @@ end
 post '/messages' do
   text = params["text-box"]
   number = params["phone-number"]
+  p number
+  p text
+  p instance.id
   instance = Instance.create(twilio_id: 123)
   exchange = Exchange.create(visitor_phone: number, instance_id: instance.id)
   Message.create(text: text, exchange: exchange)
