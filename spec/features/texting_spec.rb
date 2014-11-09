@@ -7,4 +7,16 @@ require 'spec_helper'
       expect(current_path).to eq '/sent'
       expect(page).to have_content("Your message was sent!")
     end
+
+
+  feature "Business owner can reply" do
+    scenario "after receiving a text" do
+      visit '/'
+      add_message("Howdy site owner, are you free this Friday?", "00447762432346")
+      expect(current_path).to eq '/sent'
+      expect(page).to have_content("Your message was sent!")
+    end
+
+
+
   end
