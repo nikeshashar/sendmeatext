@@ -1,9 +1,8 @@
 require 'twilio-ruby'
-# require '../../secrets.yml'
+require_relative './secrets.rb'
 
 class Phone
 
-	cf. secrets.yml file (has not been pushed to git intentionnally)
 	attr_accessor :number
 
 	def initialize(number = DEFAULT_NUMBER)
