@@ -19,7 +19,7 @@ DataMapper.auto_upgrade!
 
 
 get '/' do
-	erb :index
+	erb :widget
 end
 
 
