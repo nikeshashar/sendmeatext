@@ -1,0 +1,492 @@
+// *************************************
+//
+//   Tools
+//   -> Global utilities
+//   
+//
+// *************************************
+
+// -------------------------------------
+//   Background
+// -------------------------------------
+
+.bcp {
+  background: $c-primary;
+}
+.bcs {
+  background: $c-secondary;
+}
+.bci {
+  background: $c-inverse;
+}
+.bco {
+  background: $c-oscar;
+}
+.bcr {
+  background: $c-romeo;
+}
+.bct {
+  background: $c-tango;
+}
+.bcoff {
+  background: $c-off-background;
+}
+.bcw {
+  background: #fff;
+}
+
+
+// -------------------------------------
+//   Display
+// -------------------------------------
+
+.db {
+  display: block;
+} 
+.di {
+  display: inline;
+}
+.dib {
+  display: inline-block;
+}
+.dn {
+  display: none;
+}
+
+// -------------------------------------
+//   Overflow
+// -------------------------------------
+
+.ovh {
+  overflow: hidden;
+}
+
+// -------------------------------------
+//   Alignment
+// -------------------------------------
+
+.vam {
+  vertical-align: middle;
+}
+.vab {
+  vertical-align: baseline;
+}
+
+
+// -------------------------------------
+//   Margins
+// -------------------------------------
+
+// ----- All ----- //
+
+.maf {
+  margin: 0;
+}
+.maxs {
+  margin: $b-space-xs;
+}
+.mas {
+  margin: $b-space-s;
+}
+.mam {
+  margin: $b-space;
+}
+.mal {
+  margin: $b-space-l;
+}
+.maxl {
+  margin: $b-space-xl;
+}
+
+// ----- Bottom ----- //
+
+.mbf, .mvf {
+  margin-bottom: 0;
+}  
+.mbxs, .mvxs {
+  margin-bottom: $b-space-xs;
+}
+.mbs, .mvs {
+  margin-bottom: $b-space-s;
+}
+.mbm, .mvm {
+  margin-bottom: $b-space;
+}
+.mbl, .mvl {
+  margin-bottom: $b-space-l;
+}
+.mbxl, .mvxl {
+  margin-bottom: $b-space-xl;
+}
+
+// ----- Horizontal ----- //
+
+.mhc {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// ----- Left ----- //
+
+.mlf, .mhf {
+  margin-left: 0;
+}
+.mlxs, .mhxs {
+  margin-left: $b-space-xs;
+}
+.mls, .mhs {
+  margin-left: $b-space-s;
+}
+.mlm, .mhm {
+  margin-left: $b-space;
+}
+.mll, .mhl {
+  margin-left: $b-space-l;
+}
+
+// ----- Right ----- //
+
+.mrf, .mhf {
+  margin-right: 0;
+}
+.mrxs, .mhxs {
+  margin-right: $b-space-xs;
+}
+.mrs, .mhs {
+  margin-right: $b-space-s;
+}
+.mrm, .mhm {
+  margin-right: $b-space;
+}
+.mrl, .mhl {
+  margin-right: $b-space-l;
+}
+
+// ----- Top ----- //
+
+.mtn {
+  margin-top: -10px;
+}
+
+.mtf, .mvf {
+  margin-top: 0;
+}
+.mtxs, .mvxs {
+  margin-top: $b-space-xs;
+}
+.mts, .mvs {
+  margin-top: $b-space-s;
+}
+.mtm, .mvm {
+  margin-top: $b-space;
+}
+.mtl, .mvl {
+  margin-top: $b-space-l;
+}
+.mtxl, .mvxl {
+  margin-top: $b-space-xl;
+}
+
+// -------------------------------------
+//   Padding
+// -------------------------------------
+
+// ----- All ----- //
+
+.paxs {
+  padding: $b-space-xs;
+}
+.pas {
+  padding: $b-space-s;
+}
+.pam {
+  padding: $b-space;
+}
+.pal {
+  padding: $b-space-l;
+}
+.paxl {
+  padding: $b-space-xl;
+}
+
+// ----- Bottom ----- //
+
+.pbf, .pvf {
+  padding-bottom: 0;
+}
+.pbxs, .pvxs {
+  padding-bottom: $b-space-xs;
+}
+.pbs, .pvs {
+  padding-bottom: $b-space-s;
+}
+.pbm, .pvm {
+  padding-bottom: $b-space;
+}
+.pbl, .pvl {
+  padding-bottom: $b-space-l;
+}
+.pbxl, .pvxl {
+  padding-bottom: $b-space-xl;
+}
+
+// ----- Left ----- //
+
+.plf, .phf {
+  padding-left: 0;
+}
+.plxs, .phxs {
+  padding-left: $b-space-xs;
+}
+.pls, .phs {
+  padding-left: $b-space-s;
+}
+.plm, .phm {
+  padding-left: $b-space;
+}
+.pll, .phl {
+  padding-left: $b-space-l;
+}
+
+// ----- Right ----- //
+
+.prf, .phf {
+  padding-right: 0;
+}
+.prxs, .phxs {
+  padding-right: $b-space-xs;
+}
+.prs, .phs {
+  padding-right: $b-space-s;
+}
+.prm, .phm {
+  padding-right: $b-space;
+}
+.prl, .phl {
+  padding-right: $b-space-l;
+}
+
+// ----- Top ----- //
+
+.ptf, .pvf {
+  padding-top: 0;
+}
+.ptxs, .pvxs {
+  padding-top: $b-space-xs;
+}
+.pts, .pvs {
+  padding-top: $b-space-s;
+}
+.ptm, .pvm {
+  padding-top: $b-space;
+}
+.ptl, .pvl {
+  padding-top: $b-space-l;
+}
+.ptxl, .pvxl {
+  padding-top: $b-space-xl;
+}
+
+// -------------------------------------
+//   Positioning
+// -------------------------------------
+
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.poa {
+  position: absolute;
+}
+.pof {
+  position: fixed;
+}
+.por {
+  position: relative;
+}
+.pos {
+  position: static;
+}
+.cf {
+  @extend %group;
+}
+
+// // -------------------------------------
+// //   Rounding
+// // -------------------------------------
+
+.ra {
+  border-radius: 50%;
+}
+.ram {
+  border-radius: $b-borderRadius * 2;
+}
+.ras {
+  border-radius: $b-borderRadius;
+}
+.ran {
+  border-radius: 0;
+}
+
+// // -------------------------------------
+// //   Text
+// // -------------------------------------
+
+// // ----- Alignment ----- //
+
+.tac {
+  text-align: center;
+}
+.tar {
+  text-align: right;
+}
+.tal {
+  text-align: left;
+}
+.taj {
+  text-align: justify;
+}
+
+// // ----- Line Height Fix ----- //
+
+.lh {
+  line-height: 1.5em;
+}
+
+// // ----- Wrap ----- //
+/* @extend this to force long lines of continuous text to wrap */
+.tafw {
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+// // ----- Color ----- //
+
+.tcp {
+  color: $c-primary;
+}
+.tcb {
+  color: $c-secondary;
+}
+.tco {
+  color: $c-oscar;
+}
+.tct {
+  color: $c-tango;
+}
+.tcr {
+  color: $c-romeo;
+}
+.tcs {
+  color: $c-success;
+}
+.tcf {
+  color: $c-failure;
+}
+.tcgd {
+  color: $c-grey-d;
+}
+.tcg {
+  color: $c-grey;
+}
+.tcgl {
+  color: $c-grey-l;
+}
+.tcw {
+  color: #fff;
+}
+
+// // ----- Family ----- //
+
+.tfss {
+  font-family: $f-sans;
+}
+.tfs {
+  @extend %f-serif; 
+}
+
+// // ----- Size ----- //
+
+.tsxs {
+  @extend %b-fontSize-xs;
+}
+.tss {
+  @extend %b-fontSize-s;
+}
+.tsm {
+  @extend %b-fontSize-m;
+}
+.tsl {
+  @extend %b-fontSize-l;
+}
+.tsxl {
+  @extend %b-fontSize-xl;
+}
+.tsxxl {
+  @extend %b-fontSize-xxl;
+}
+
+// // ----- Style ----- //
+
+.tsi {
+  font-style: italic;
+}
+
+// // ----- Transform ----- //
+
+.ttu {
+  text-transform: uppercase;
+}
+
+// ----- Letter Spacing ----- //
+
+.tls {
+  letter-spacing: 0.1em;
+}
+
+// ----- Weight ----- //
+
+.twt {
+  font-weight: 300;
+}
+.twn {
+  font-weight: 500;
+}
+.twm {
+  font-weight: 600;
+}
+.twb {
+  font-weight: 700;
+} 
+
+// -------------------------------------
+//   Border
+// -------------------------------------
+
+.bor {
+  border: 1px solid $c-border;
+}
+
+// // -------------------------------------
+// //   Responsive
+// // -------------------------------------
+
+
+// -------------------------------------
+//   Animation
+// -------------------------------------
+
+.anh {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.ans {
+  opacity: 1;
+  visibility: visible;
+}

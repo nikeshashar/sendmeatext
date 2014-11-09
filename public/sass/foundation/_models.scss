@@ -1,0 +1,162 @@
+// *************************************
+//
+//   Controller
+//   -> Re-usable brand guidelines and patterns for fast creation of elements
+//        
+//      usage: each key, value in map 
+//
+// *************************************
+
+
+// ----- BRAND COLOURS ----- //
+
+
+$brand-colours: (
+    alpha: #29b898,
+    bravo: #bd8f5f,
+    oscar: #5f85bc,
+    romeo: #cc5f61,
+    tango: #f8b21b,
+    success: #54bb51,
+    failure: #dc4e40,
+    inverse: $c-inverse
+);
+
+
+
+
+@each $color, $colorvalue in $brand-colours {
+    %c-#{$color}  {
+        background: $colorvalue;
+        color: #fff;
+        border: 0;
+        a {
+            color: #fff;
+        }
+    }
+}
+
+@each $color, $value in $brand-colours {
+		.row--#{$color} {
+			@extend %c-#{$color};
+		}
+}
+
+@each $color, $value in $brand-colours {
+		.island--#{$color} {
+			@extend %c-#{$color}
+		}
+    .island--hover--#{$color}:hover {
+      background: $value;
+      color: #fff;
+    }
+}
+@each $color, $value in $brand-colours {
+    .pill--#{$color} {
+      @extend %c-#{$color}
+    }
+    .badge--#{$color} {
+      @extend %c-#{$color}
+    }
+}
+@each $color, $value in $brand-colours {
+    .alert--#{$color} {
+      @extend %c-#{$color}
+    }
+}
+
+
+// ----- Second link colours ----- //
+
+$c-profiles: (
+    facebook: #3b5998,
+    googleplus: #dd4b39,
+    instagram: #517fa4,
+    linkedin: #007bb6,
+    pinterest: #cb2027,
+    twitter: #00aced,
+    youtube: #b00
+);
+
+@each $site, $color in $c-profiles {
+    .social--#{$site} {
+      color: $color;
+    }
+}
+
+// ----- Z-INDEXES ----- //
+
+$z-index: (
+  modal              : 200,
+  navigation         : 100,
+  footer             : 90,
+  triangle           : 60,
+  navigation-rainbow : 50,
+  share-type         : 41,
+  share              : 40,
+);
+
+@function z-index($key) {
+  @return map-get($z-index, $key);
+}
+
+@mixin z-index($key) {
+  z-index: z-index($key);
+}
+
+
+// ----- IMAGES ----- //
+
+
+/* 
+
+prefix all files as stated before the opening of the map, * being meta to provide an understandable name
+
+*/
+
+//for logo images: use logo-*
+$logo-images: (
+    fileName: background-x size-y,
+);
+
+@each $fileName, $size in $logo-images {
+    .logo--#{$fileName} {
+      background: url("/img/logo/$fileName");
+      background-size: $size
+    }
+}
+
+
+@each $fileName, $size in $logo-images  {
+  .logo--#{$fileName}:after {
+    background-image: url('/img/icon_#{$fileName}.png');
+    background-size: $size;
+    background-repeat: no-repeat;
+  }
+}
+
+//for background images: use bg-*
+$background-images: (
+//    bgName: url("$url");
+
+);
+@each $logoName, $url in $background-images {
+    .bg--#{$logoName} {
+      background: url("$url") center center no-repeat;
+      background-size: cover;
+    }
+}
+
+
+//for content images: use img-*
+$content-images: (
+//    imgName: url("$url");
+  
+);
+@each $contentName, $url in $logo-images {
+    .img--#{$contentName} {
+      background: url("$url") center center no-repeat;
+      background-size: cover;
+    }
+}
+

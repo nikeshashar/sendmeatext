@@ -1,0 +1,33 @@
+@import "compass/reset"; 
+@import "compass/css3"; 
+@import "compass/css3/box-shadow";
+@import "compass/css3/opacity";
+@import "compass/css3/border-radius";
+@import "compass/typography/vertical_rhythm";
+
+
+@import "foundation/reset.scss";
+@import "foundation/helpers.scss";
+@import "foundation/config.scss";
+@import "foundation/tools.scss";
+@import "foundation/base.scss";
+
+@import "components/button.scss";
+@import "components/form.scss";
+
+
+//demo settings for width [temp]
+@import "modules/demo.scss";
+
+//app
+@import "modules/helper.scss";
+@import "app/_app.scss";
+@import "app/_bubble.scss";
+@import "app/_form.scss";
+
+// ******************************************************************************************************************************
+// Variables
+// ******************************************************************************************************************************
+$container-width: 980px;
+$sidebar-width: 325px;
+$main-width: $container_width - $sidebar-width;

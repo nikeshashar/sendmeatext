@@ -1,0 +1,175 @@
+// *************************************
+//
+//   Forms
+//   -> User inputs
+//
+// -------------------------------------
+//   Template (Haml)
+// -------------------------------------
+//
+// %form.form [.form--fieldset]
+//  [%fieldset]
+//    %legend.form__legend
+//    %label.form__label
+//    %input.form__input{ type: 'text' }
+//
+//
+// *************************************
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.form {
+  box-sizing: border-box;
+}
+
+.form--fieldset fieldset {
+  border: 1px solid $c-border;
+  padding: $b-space $b-space-l;
+}
+
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+//  Inline 
+.form--inline { 
+}
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+
+// ----- Labels ----- //
+
+.form__legend {
+  font-weight: 700;
+  border: 0;
+  white-space: normal;
+  padding: 0 $b-space;
+}
+
+.form__label {
+  display: block;
+  @extend %b-fontSize;
+}
+
+// ----- Inputs ----- //
+
+.form__input {
+  border: 1px solid $c-border;
+  border-radius: $b-borderRadius;
+  font-family: inherit;
+  padding: $b-space;
+  font-size: inherit;
+  width: 100%;
+  margin-bottom: $b-space-l;
+  &[type="checkbox"], 
+  &[type="file"], 
+  &[type="image"], 
+  &[type="radio"] {
+      background: auto !important;
+      border: auto !important;
+      height: auto !important;
+      width: auto !important;
+  }
+  &[disabled] { 
+      cursor: not-allowed;
+      background-color: #f6f6f6; 
+  }
+  &:focus {
+    border-color: #1abc9c;
+  }
+}
+
+.form__dropdown {
+  @extend .form__input;
+  padding: $b-space-xl $b-space;
+  height: 40px;
+}
+
+.form__option {
+  margin-bottom: $b-space-l;
+}
+
+.form__input:focus {
+  outline: none; 
+  outline: thin dotted \9;
+}
+
+.form__input--disabled {
+  background-color: $c-grey-l;
+}
+
+
+
+
+
+
+
+// ----- Inline ----- //
+
+.form--inline .form__input {
+  width: 300px;
+}
+
+
+// ----- Input Preappend ----- //
+
+.form__group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+  margin-bottom: $b-space-l;
+}
+.form__group .form__input, .form__group .form__group__prepend  {
+  display: table-cell;
+}
+
+.form__group__prepend   {
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+  line-height: 1;
+  font-size: 14px;
+  padding: 6px 12px;
+  text-align: center;
+  background-color: $c-off-background;
+  border-radius: $b-borderRadius;
+  border: 1px solid $c-border;
+}
+
+.form__group .form__group__prepend {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form__group .form__input:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form__group .form__input {
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 100%;
+  margin-bottom: 0;
+  border-left: 0;
+  margin-top: 0;
+}
+
+// -------------------------------------
+//   State
+// -------------------------------------
+
+.form__input.is-invalid {
+  border-color: $c-failure !important;
+  color: $c-failure !important;
+}
+.form__input.is-valid {
+  border-color: $c-success  !important;
+  color: $c-success  !important;
+}
