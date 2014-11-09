@@ -5,13 +5,13 @@ class Message
 
   # This block describes what resources our model will have
   property :id,           Serial
-  property :text,         String
+  property :dialog,       String
   property :time_stamp,   DateTime
   property :from_owner,   Boolean
   property :exchange_id,  Integer
-  
+
   belongs_to :exchange
 
 
-  
+
 end
