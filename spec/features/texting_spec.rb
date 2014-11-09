@@ -1,5 +1,5 @@
 require 'spec_helper'
-  
+
   feature "Text gets sent" do
     scenario "after user entered data in the form" do
       visit '/'
@@ -17,7 +17,4 @@ require 'spec_helper'
       site_owner_phone = Phone.new
       expect(site_owner_phone.received_message).to eq "Sure, I'm free!"
     end
-
-
-
-  end
+end

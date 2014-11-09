@@ -1,0 +1,294 @@
+// *************************************
+//
+//   BUTTON
+//   -> clickable item
+//
+//
+// *************************************
+
+
+/* General button style (reset) */
+
+.btn {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+  line-height: 2.5;
+  padding-left:3em;
+  padding-right: 3em;
+  display: inline-block;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: none;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  background: #69bf61;
+  color: #fff;
+  outline: none;
+  white-space: nowrap;
+  position: relative;
+  border-radius: $b-borderRadius;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  &:before {
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+  }
+  &:hover {
+    background: rgba(0,0,0,0.2);
+  }
+  &:active, &:focus {
+    outline: none;
+    color: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.1);
+    -webkit-box-shadow: inset 6px 6px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 6px 6px 5px rgba(0, 0, 0, 0.05);
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+}
+
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// ----- Position ----- //
+
+.btn--block {
+  display: block;
+  margin: $b-space 0;
+}
+
+// ----- Sizes ----- //
+
+.btn--xs{
+    padding-right:0.5em;
+    padding-left: 0.5em;
+    line-height:2.5;
+    font-size: 85%;
+}
+.btn--small{
+    padding-right:1em;
+    padding-left: 1em;
+    line-height:2.5;
+}
+.btn--full{
+    width:100%;
+    padding-right:0;         
+    padding-left: 0;            
+    text-align:center;
+}
+.btn--paragraph{
+  vertical-align: baseline;
+  font-size: inherit;
+  line-height: inherit;
+  padding-right: .5em;
+  padding-left: .5em;
+}
+
+// ----- Themes ----- //
+
+//Primary
+.btn--primary {
+  background: $c-primary;
+  color: #fff;
+  &:hover, &:focus {
+    background: lighten($c-primary, 5%);
+  }
+  &:active {
+    background: darken($c-primary, 5%);
+  }
+}
+
+//Outline 
+.btn--outline {
+  background: transparent;
+  color: #fff;
+  border: 3px solid #fff;
+  border-radius: $b-borderRadius;
+}
+
+//Functions (success & failure)
+.btn--success {
+  background: #54bb51;
+  color: #fff;
+  &:hover, &:focus {
+    background: lighten(#54bb51, 5%);
+  }
+  &:active {
+    background: darken(#54bb51, 5%);
+  }
+}
+.btn--failure {
+  background: #dc4e40;
+  color: #fff;
+  &:hover {
+    background: lighten(#dc4e40, 5%);
+  }
+  &:active {
+    background: darken(#dc4e40, 5%);
+  }
+}
+
+
+//with Static Icon
+
+.btn--icon-l {
+  padding-left: 6em;
+  &:before {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 2.7;
+    font-size: 120%;
+    width: 60px;
+    background: rgba(0,0,0,0.05);
+  }
+  &:hover:before {
+    background: rgba(0,0,0,0.05);
+  }
+}
+.btn--icon-r {
+  padding-right: 6em;
+  overflow: hidden;
+  &:before {
+    position: absolute;
+    height: 100%;
+    left: auto;
+    right: 10px;
+    top: 0;
+    line-height: 3.5;
+    width: 60px;
+    z-index: 2;
+  }
+  &:after {
+    width: 30%;
+    height: 200%;
+    background: rgba(255,255,255,0.1);
+    z-index: 1;
+    right: 0;
+    top: 0;
+    margin: -5px 0 0 -5px;
+    -webkit-transform-origin: 0 0;
+    -webkit-transform: rotate(-20deg);
+    -moz-transform-origin: 0 0;
+    -moz-transform: rotate(-20deg);
+    -ms-transform-origin: 0 0;
+    -ms-transform: rotate(-20deg);
+    transform-origin: 0 0;
+    transform: rotate(-20deg);
+  }
+  &:hover:after {
+    width: 40%;
+  }
+}
+
+//with Moving Icon
+
+.btn--go-l {
+  overflow: hidden;
+  &:before {
+    right: 20%;
+    opacity: 0;
+    position: absolute;
+    line-height: 3.6;
+  }
+  &:hover:before  {
+    right: 10%;
+    opacity: 1;
+  }
+  &:active:before {
+    color: rgba(0,0,0,0.3);
+  }
+}
+
+.btn--go-r {
+  overflow: hidden;
+  &:before {
+    left: 20%;
+    opacity: 0;
+    position: absolute;
+    line-height: 3.6;
+  }
+  &:hover:before {
+    left: 10%;
+    opacity: 1;
+  }
+  &:active:before {
+    color: rgba(0,0,0,0.3);
+  }
+}
+
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+.btn.is-disabled {
+  background: $c-border;
+  color: $c-grey;
+  cursor: not-allowed;
+  &:hover {
+    background: $c-border;
+  }
+  &:active {
+    background: $c-border;
+    top: 0;
+  }
+}
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+.has-btn--group {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+.btn__child.is-active {
+  background: $c-primary-d;
+  top: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+  box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+}
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+.btn__child {
+  position: relative;
+  float: left;
+  &:first-child:not(:last-child) {
+    border-top-right-radius: 0;
+    border-right: 1px solid rgba(0,0,0,0.2);
+    border-bottom-right-radius: 0;
+  }
+  &:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+    border-radius: 0;
+    border-right: 1px solid rgba(0,0,0,0.2);
+  }
+  &:last-child:not(:first-child) {  
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
