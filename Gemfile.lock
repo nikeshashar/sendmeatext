@@ -120,7 +120,6 @@ DEPENDENCIES
   data_mapper
   database_cleaner
   dm-postgres-adapter
-  pg (= 0.16.0)
   rspec
   shotgun
   sinatra

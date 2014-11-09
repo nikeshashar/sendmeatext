@@ -18,7 +18,7 @@ textApp.config(['$routeProvider',
         templateUrl: 'partials/settings.html',
         controller: 'SettingsCtrl'
       }).
-      otherwise({
-        redirectTo: '/dialog'
-      });
+      // otherwise({
+      //   redirectTo: '/dialog'
+      // });
   }]);
