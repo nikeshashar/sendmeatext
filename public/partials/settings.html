@@ -1,19 +1,39 @@
-<div>
+<body wix-ui >
+
     <!-- Header box -->
     <header class="box">
         <div class="logo">
             <img width="86" src="/../img/logo-fullIcon.png" alt="logo"/>
         </div>
         <div class="intro">
+            <h4 style="margin-top: 10px">Send me a text</h4>
             <p>
-                Send me a text does exactly what it says on the tin. It allows your visitors to text you through your website through a secure channel where your mobile phone number is never revealed online nor back to the website visitor.
+                Send me a text does exactly what it says on the tin. It allows your visitors to message you via SMS through your website using a secure channel where your mobile phone number is never revealed.
             </p>
 
         </div>
     </header>
 
     <!-- Settings box -->
-    <div wix-ctrl="Accordion">
+<div wix-ctrl="Accordion">
+
+
+    <div class="acc-pane general-settings">
+        <h3>General Settings</h3>
+        <div class="acc-content">
+            <p>Your Phone Number (to receive messages on):</p>
+            <div class="left"></div>
+            <div class="left">
+                <div wix-model="senderNumber" wix-ctrl="Input" wix-options="{size: 'large', type: 'number', placeholder: '+447198238123'}"></div>
+            </div>
+   
+                <p>The description:</p>
+            <div class="left"></div>
+            <div class="left">
+                <div class="keyword" type="Edit" wix-model="appDescription" wix-ctrl="Input" wix-options="{size: 'big', placeholder: 'Send me a message to find out when my next gig is and I will text you back in the next 24 hours!'}"></div></div>
+            <button ng-click="save()" class="uilib-btn">Save</button>
+        </div>
+    </div>
 
     <!-- Color Pickers -->
     <div class="acc-pane">
@@ -21,54 +41,43 @@
         <div class="acc-content">
             <p>Set the widget colors</p>
             <ul class="list">
-                <li wix-label="The app container">
-                    <div wix-param="searchBoxColor" wix-ctrl="ColorPickerWithOpacity" wix-options="{startWithColor: 'color-1'}"></div>
-                </li>
                 <li wix-label="Speech Bubble Colour">
-                    <div wix-param="buttonColor" wix-ctrl="ColorPickerWithOpacity" wix-options="{startWithColor: 'color-2'}"></div>
+                    <div wix-param="bubbleColor" wix-ctrl="ColorPickerWithOpacity" wix-options="{startWithColor: 'color-2'}"></div>
+                </li>
+                <li wix-label="Text Colour">
+                    <div wix-param="formTextColor" wix-ctrl="ColorPicker" wix-options="{startWithColor:'color-1'}"></div>
                 </li>
                 <li wix-label="Button Colour">
-                    <div wix-param="descriptionColor" wix-ctrl="ColorPicker" wix-options="{startWithColor:'color-3'}"></div>
+                    <div wix-param="buttonColor" wix-ctrl="ColorPicker" wix-options="{startWithColor:'color-8'}"></div>
+                </li>
+                <li wix-label="Button Text Colour">
+                    <div wix-param="buttonTextColor" wix-ctrl="ColorPicker" wix-options="{startWithColor:'color-1'}"></div>
                 </li>
             </ul>
         </div>
     </div>
 
-    <div class="acc-pane general-settings">
-        <h3>General Settings</h3>
-        <div class="acc-content">
-            <p>Your Phone Number (to receive messages on:</p>
-            <div class="left"></div>
-            <div class="left">
-                <div class="keyword" wix-model="keyword" wix-ctrl="Input" wix-options="{size: 'large', placeholder: 'London'}"></div></div>
-            <p>The title:</p>
-            <div class="left"></div>
-            <div class="left">
-                <div class="keyword" wix-model="keyword" wix-ctrl="Input" wix-options="{size: 'large', placeholder: 'London'}"></div></div>
-                <p>The description:</p>
-            <div class="left"></div>
-            <div class="left">
-                <div class="keyword" wix-model="keyword" wix-ctrl="Input" wix-options="{size: 'large', placeholder: 'London'}"></div></div>
-            <button ng-click="save()" class="uilib-btn">Save</button></li>
-            </ul>
-        </div>
-    </div>
 
     <!-- Font Pickers -->
     <div class="acc-pane">
         <h3>Font Settings: </h3>
         <div class="acc-content">
-            <p>Set the widget fonts</p>
+            <p>Set the widget font</p>
             <ul class="list">
-                <li wix-label="Title">
+                <li wix-label="Description">
                     <div wix-param="descriptionFont" wix-ctrl="FontStylePicker"></div>
                 </li>
-                <li wix-label="Description">
-                    <div wix-param="usernameFont" wix-ctrl="FontStylePicker"></div>
+                <li wix-label="Label">
+                    <div wix-param="labelFont" wix-ctrl="FontStylePicker"></div>
+                </li>
+                <li wix-label="Input">
+                    <div wix-param="inputFont" wix-ctrl="FontStylePicker"></div>
+                </li>
+                <li wix-label="Button">
+                    <div wix-param="buttonFont" wix-ctrl="FontStylePicker"></div>
                 </li>
             </ul>
         </div>
     </div>
-
-    </div>
 </div>
+</body>

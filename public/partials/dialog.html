@@ -3,11 +3,71 @@
     <div class="bubble">
         <p class="bubble__description">Ask me anything and I will send an answer to your phone in the 
         next 24 hours. </p>
-        <form class="form" method="post" action="/messages">
-            <textarea class="form__input"  ng-model="message" placeholder="Enter your message"></textarea>
+        <form class="form" ng-submit="processMessage()">
+            <textarea class="form__input"  ng-model="messageData.dialog" placeholder="Enter your message"></textarea>
             <label for="sender" class="form__label mbm tss ttu tls twb" >Enter your phone number:</label>
-            <input class="form__input" id="sender" name="sender" ng-model="sender" placeholder="Your Phone Number">
-            <a class=" btn btn--full">Send Text</a>
+            <input class="form__input" id="sender" name="sender" ng-model="messageData.sender" placeholder="Your Phone Number">
+            <button type="submit" class=" btn btn--full">Send Text</button>
         </form>
     </div>
 </div>
+
+
+<style wix-style>
+    body, .app {
+        background-color: {{style.bgColor}};
+    }
+    .bubble {
+        background-color: {{style.bubbleColor}};
+    }
+    .bubble:after {
+        border-color: {{style.bubbleColor}} transparent;
+    }
+    .form__label, .bubble__description {
+        color: {{style.formTextColor}};
+    }
+    .bubble__description {
+        {{style.descriptionFont Body-S}};
+    }
+    .form__label {
+        {{style.labelFont Body-S}};
+    }
+    .form__input {
+        {{style.inputFont Body-S}};
+    }
+    .btn {
+        color: {{style.buttonTextColor}};
+        background-color: {{style.buttonColor}};
+        {{style.buttonFont Body-S}};
+    }
+</style>
+
+
+
+<script>
+// create angular controller and pass in $scope and $http
+        function formController($scope, $http) {
+            // create a blank object to hold our form information
+            // $scope will allow this to pass between controller and view
+            $scope.formData = {};
+            // process the form
+            $scope.processForm = function() {
+                $http({
+                    method  : 'POST',
+                    url     : 'process.php',
+                    data    : $.param($scope.formData),  // pass in data as strings
+                    headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+                })
+                    .success(function(data) {
+                        console.log(data);
+                        if (!data.success) {
+                            // if not successful, bind errors to error variables
+                            $scope.errorName = data.errors.name;
+                            $scope.errorSuperhero = data.errors.superheroAlias;
+                        } else {
+                            // if successful, bind success message to message
+                            $scope.message = data.message;
+                        }
+                    });
+            };
+</script>
