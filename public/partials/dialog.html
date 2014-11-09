@@ -5,8 +5,8 @@
         next 24 hours. </p>
         <form class="form">
             <textarea class="form__input"  ng-model="message" placeholder="Enter your message"></textarea>
-            <label for="sender" class="form__label mbm tss ttu tls twb" id="textbox">Enter your phone number:</label>
-            <input class="form__input" id="sender" name="sender" ng-model="sender" placeholder="Your Phone Number">
+            <label for="sender" class="form__label mbm tss ttu tls twb" method="post" action="/messages">Enter your phone number:</label>
+            <input class="form__input" id="sender" name="sender" ng-model="sender" placeholder="Your Phone Number" method="post" action="/messages">
             <a class=" btn btn--full">Send Text</a>
         </form>
     </div>
