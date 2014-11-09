@@ -11,13 +11,13 @@ DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/smt3_#{e
 require './app/models/message.rb' 
 require './app/models/exchange.rb' 
 require './app/models/instance.rb' 
-
 # After declaring your models, you should finalise them
 DataMapper.finalize
 
 # However, the database tables don't exist yet. Let's tell datamapper to create them
 DataMapper.auto_upgrade!
 
+set :public_folder, Proc.new { File.join(root,"..","public") }
 
 get '/' do
 	erb :widget
