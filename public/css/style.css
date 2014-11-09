@@ -1404,66 +1404,12 @@ TODO: On-the-fly button generator.
     box-shadow: 1px 1px 1px #b5b5b5 inset;
     color: #3a3a3a; }
 
-/*
-Dialog implementation for popups.
-
-Add "ui-warning" for an exclamation mark.
-Example:
-<div id="dialog" title="Title" ui-warning>Dialog description...</div>
-
-Automatically imports with the dialog module.
-See <a href="#">Dialog module</a>
-*/
-.ui-dialog {
-  box-shadow: 0 0 8px #bbb;
-  border-radius: 10px;
-  overflow: hidden;
-  z-index: 2;
-  text-align: left;
-  padding: 10px;
-  background: #fff;
-  outline: none; }
-  .ui-warning.ui-dialog {
-    padding-left: 70px;
-    background: #fff url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAArCAYAAADhXXHAAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNS4xIFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NjY5QUZGRDY2OTRGMTFFMkI2REM5NkIwNkREMjI3MjAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NjY5QUZGRDc2OTRGMTFFMkI2REM5NkIwNkREMjI3MjAiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2NjlBRkZENDY5NEYxMUUyQjZEQzk2QjA2REQyMjcyMCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2NjlBRkZENTY5NEYxMUUyQjZEQzk2QjA2REQyMjcyMCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PjQGswkAAAPtSURBVHjazFlrSBRRFL6uIgiGJEhSEBiCIGxYRmGsFMKGUBRF9FCMUhGqH/Uje0PgjyKDMIoe4IYVSGEoSIH0ItAUIX9FgmAJQiAEiiBIUtR38KzcTmfd2ZnZ3T74GObO3Hu/OXPumXPPZPw8Vm98wFqwEswFy6327+AkOAH2g/NeJsny0LcKDIO7wVKHfXrBAbAP/JTohBkuLNsM1oFBj2/jCdjDdIRAAoM3gcNgqw9CDT9wN3jb6XhOLfsIPLLM9Wl+tXPgiNVewP5cxC6zHI6D97347CrwMbhDuTYLRkhk5sPI63hP+6u+IR+HarZotXLLPbAYPOPGsht5gM2ifYHbWyBy2s37h3Aasw2sUC53gQcSEbuaHV8KpRW8ByIn/Ih3EF2DQzuYIy7dBU86XWDtitDn4Ba/hBIwVicO28EpcemE5g6aZa+CF0TbLQx82iQJsHAhDoO8EG1sBYdiid0JvhAdnkHoIYeTfsFhndX0Bn3DDvsGWXCu1fwS3BXLDZrE+RjYaFIAPBSth1rRTMZr0MTW8afTRiMGmTMpAuaiz3FnLAPaYkPK6x8wqccVDo9R0EKvscVS6DgoOrWkQShZd5zjuJGGjIrdC+bZ8RSdRk36EFF8d0lsSImpaQMvtkmRL5fFEtvjcp6vcc4TQa84rySxK0SKNsdPlm6xcnGHApzp2Bj3MIEUN+NhrDFxXkJi85Xc1C1mfLSs1LEyoGQ88z5a1ovYWXGeF1DE5fwnYvOk+IBi7nyfxHoRqumYIbEy+JciA8r0QbBXsSVywZHYH2IPn51AHSCZYuWWZyjLimlB8XlzG2vDxh9UifP+QIwAvD+dn1u4YZkwHkWGkYCVkdtRoRwdQi7m+a3QDU4p1ZulRGZWScta02TVIG8E/vn02sn3O+ng6JgOd7hGiZe9sGgjIMWSK9wRHdsgeE0KrdoQzV1FpUbdMHaIcxLajUFyUiA0xMUNG51Rf41VN2hW/JWS8VqkjgtJEkpx/b1ZLOTZOcp6OwvUKjI3wKdKKHuFQQuSIJSKdMNCaLQqM+6kfHSYxIm2beBHDF7hk8hs8DwXVXKVRdbhtNZFoHrsW9FGe6FBTNIFFnsQSjvpz8rKJzwAL2r94hWT6WGoBLlPm5P3SeTPffHKnxBYwu5ELItx2yWzWGszbsRGcR08G+eeEc7g5jmvIB8s5IhCC6homb60k71sr3wNTv/WnAM/gEe5xqCh3Pz9W8kpqJhyU9kZmER8Vtsakzs0GqsM6RJzHHU2cLlo1kknN//BIkz6hldzzSHsYDv0zSz+JBlgP0+44Jfh0x9Gwib2zRx+EPq7OMUiR31Ixs0fAQYAzssXD8AhPkUAAAAASUVORK5CYII=') 15px 50px no-repeat; }
-  .ui-dialog .ui-dialog-titlebar span {
-    display: inline-block;
-    font-size: 20px;
-    padding: 10px 0;
-    color: red; }
-  .ui-dialog .ui-dialog-titlebar-close {
-    background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKEQsQM/J6wgkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAB3klEQVQozyXNsUojQRzA4d/MLBnXBY9IjhBSRCRY2AZtUxgU9BUCgTQ2Fj5LDgUJhxK0EgsLMVhYHEJIJ5whhcqhh2CjciHZWze787/ivhf41Hg8FmstIgqlFMZowvAvWmt835KmgjEK5xzOOXQQBERRxPn5OWEY4pygtcZaC8Dr6ysHB22enp7wPA9vOp3S7XY5Oupwf39Ps9kkn/+Kc/D4+Iv9/X36/T7GKLa2tvCiKCIMQ+I45urqCmMMOzs7vL+/02q1GA6HrKysUK1WKRQKeLOzs2xsbBDHCcfHx/R6PabTKaPRiIeHB0qlEtvb2xQKBUQENZlMZGZmho+PP1xfX3NyckKSJIgIpVKJ3d1dlpbKiAhxHKOttaRpyvx8lsXFRXK5HJ7nkclkKBaLLCwsEEUxzjlEBK2UQkS4u/vJ4eF3Xl5+k81+wRjFzc0P9va+oZRgjEFrjeec4/b2lna7zWAwYHl5mXq9TpqmdDodLi4uSJKERqPxf397e2MwGDAcDimXy2xubrK6uoq1ls/PT05PT7m8vKRYLLK2toaXz+ep1Wo8Pz9TqVSoVqv4vk+SJKyvrxMEAWdnZ+RyOebm5lAiIgBxHJOmKb7vAzAajQiCAGMMk8kEgCAI+Ad9U9zxKQ49VQAAAABJRU5ErkJggg==') top left no-repeat;
-    height: 12px;
-    width: 12px;
-    display: inline-block;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    border: none;
-    outline: none; }
-  .ui-dialog .ui-dialog-buttonset button {
-    float: left; }
-  .ui-dialog .ui-dialog-buttonset button:first-child {
-    float: right; }
-
-.ui-widget-overlay {
-  display: block;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #111 50% 50% repeat;
-  opacity: .7;
-  filter: Alpha(Opacity=70); }
-
 [ng\:cloak], [ng-cloak], .ng-cloak {
   display: none !important; }
 
 body {
-  text-align: center;
   color: #555;
+  text-align: left;
   background: #fff; }
 
 .app {
