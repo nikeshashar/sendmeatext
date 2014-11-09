@@ -1,7 +1,6 @@
 require 'twilio-ruby'
 require_relative './secrets.rb'
 
-
 class Phone
 
 	attr_accessor :number
