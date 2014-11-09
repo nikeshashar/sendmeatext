@@ -2,7 +2,6 @@
 
 angular
     .module('vineApp', [
-        'vineApp.services',
         'ngCookies',
         'ngResource',
         'ngSanitize',
