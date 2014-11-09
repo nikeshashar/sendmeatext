@@ -36,7 +36,7 @@ post '/messages' do
   Message.create(dialog: dialog, exchange_id: exchange.id)
   phone = Phone.new()
   phone.send_sms(sender, dialog)
-  redirect to('/sent')
+  redirect to('/dialog/response')
 end
 
 get '/sent' do
