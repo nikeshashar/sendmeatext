@@ -1,0 +1,149 @@
+// *************************************
+//
+//   Base
+//   -> Tag Level Settings (body, p, etc.)
+//
+// *************************************
+
+*, ::before, ::after {
+  @include box-sizing(border-box);
+}
+html {
+	font-size: 100%;
+}
+body {
+	@extend %b-fontSize;
+  background: #fff;
+	color: $c-dark;
+	font-family: $f-sans;
+  position: relative;
+	line-height: $b-lineHeight;
+  -webkit-font-smoothing: antialiased;
+}
+::selection {
+  background: $c-tango; /* Safari */
+  }
+::-moz-selection {
+  background: $c-tango; /* Firefox */
+}
+iframe {
+  border: 0;
+}
+
+// -------------------------------------
+//   Block Content
+// -------------------------------------
+
+p {
+  margin-bottom: $b-space;
+  margin-top: 0;
+}
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+li {
+  margin-bottom: $b-space-s;
+  margin-top: 0;
+}
+label {
+  display: block;
+}
+textarea { 
+  height: auto; 
+}
+
+// ----- Characteristics ----- //
+
+blockquote {
+    border-left: medium none;
+    padding-left: $b-space;
+    position: relative;
+    margin: 0 auto;
+    width: 75%;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+}
+q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+}
+blockquote:before {
+    background-color: $c-primary;
+    border-radius: 2px 2px 2px 2px;
+    bottom: 0;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 3px;
+}
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+sup, sub {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.4em;
+}
+sub { top: 0.4em; }
+
+// ----- Borders ----- //
+
+hr {
+  border: 1px solid $c-border;
+}
+
+// ----- Headings ----- //
+
+h1, h2, h3, h4 {
+  font-family: $f-sans;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: $b-space-xs;
+  margin-top: 0;
+}
+
+h1 {
+  @include rem(font-size, 50px);
+}
+h2 {
+  @include rem(font-size, 38px);
+}
+h3 {
+  @include rem(font-size, 32px);
+}
+h4 {
+    @include rem(font-size, 24px);
+}
+h5 {
+    @include rem(font-size, 12px);
+}
+// -------------------------------------
+//   Inline Content
+// -------------------------------------
+
+a {
+  text-decoration: none;
+  color: $c-primary;
+}
+h1 a,h2 a,h3 a, h4 a, h5 a {
+  &:hover,
+  &:focus {
+    border-bottom: none;
+  }
+}
+p a {
+	&:hover,
+	&:focus {
+		border-bottom: 1px solid $c-primary;
+	}
+}
+img {
+  height: auto;
+  max-width: 100%;
+ }

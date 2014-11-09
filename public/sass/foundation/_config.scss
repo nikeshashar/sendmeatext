@@ -1,0 +1,201 @@
+// *************************************
+//
+//   Config
+//   -> Fonts, Variables
+//
+// *************************************
+
+// -------------------------------------
+//   @font-face
+// -------------------------------------
+
+$f-sans: 'Proxima-Nova', Proxima Nova, Helvetica, Arial, sans-serif !default;
+%f-serif {font-family: 'freight-text-pro',  Georgia, Cambria, serif; font-size: 19px;}/*shouldn't be a placeholder but override necessary for adapting base font size*/
+
+// -------------------------------------
+//   Resolution Screen Size Variables
+// -------------------------------------
+
+$r-mobile                  : 320px;
+$r-mobile-horizontal       : 480px;
+$r-tablet                  : 768px;
+$r-tablet-horizontal       : 1024px;
+$r-desktop                 : 1024px;
+$r-desktop-width           : 1180px;
+
+// -------------------------------------
+//   Colors
+// -------------------------------------
+
+// ----- Logo Palette ----- //
+
+$c-primary              : #29b898;
+$c-secondary            : #bd8f5f;
+$c-tango                : #f8b21b;
+$c-romeo                : #cc5f61;
+$c-oscar                : #5f85bc;
+
+
+// ----- Supporting Palette ----- //
+
+$c-primary-l: #6dd6ab;
+$c-primary-d: #328472;
+
+$c-secondary-l: #c8a178;
+$c-secondary-d: #a07950;
+
+$c-yellow-l: #fabd3f;
+$c-yellow-d: #d29517;
+
+$c-red-l: #d4787a;
+$c-red-d: #ac5052;
+
+$c-blue-l: #7998c7;
+$c-blue-d: #51709f;
+
+
+// ----- Status Palette ----- //
+
+$c-success                 : #54bb51;
+$c-failure                 : #dc4e40;
+
+
+
+// ----- Base Palette ----- //
+
+$c-dark: #3c3e43;
+$c-grey-d: #55565a;
+$c-grey: #76777a;
+$c-grey-l: #b7b7b7;
+$c-border: #ddd;
+$c-off-background: #f4f4f4;
+
+
+// ----- Inverse Palette ----- //
+
+
+$c-inverse-d: #2f3849;
+$c-inverse: #364052;
+$c-inverse-l: #a1abbf;
+$c-inverse-b: #d9dfe6;
+$c-inverse-background: #ecf2f7;
+
+
+// ----- Second link colours ----- //
+
+$c-profiles: (
+    facebook: #3b5998,
+    googleplus: #dd4b39,
+    instagram: #517fa4,
+    linkedin: #007bb6,
+    pinterest: #cb2027,
+    twitter: #00aced,
+    youtube: #b00
+);
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+// ----- Borders & Box Shadow ----- //
+
+$b-borderRadius: 3px;
+$b-borderRadius-l: 6px;
+$b-borderStyle: solid;
+$b-borderWidth: 2px;
+$b-border: $b-borderWidth $b-borderStyle $c-border;
+$b-boxShadow: rgba(0, 0, 0, 0.1618) 0px 1px 2px 0px;
+
+// ----- Typography ----- //
+
+%b-fontSize       {@include rem(font-size,18px);} //see also helpers to adjust for REMs
+%b-fontSize-xs    {@include rem(font-size,12px);}
+%b-fontSize-s     {@include rem(font-size,14px);}
+%b-fontSize-m     {@include rem(font-size,24px);}
+%b-fontSize-l     {@include rem(font-size,28px);}
+%b-fontSize-xl    {@include rem(font-size,38px);}
+%b-fontSize-xxl    {@include rem(font-size,68px);}
+$b-lineHeight: 1.5;
+
+// ----- Sizing ----- //
+
+$b-maxWidth: rem(1024px);
+$b-maxWidth-s: rem(700px);
+$b-space: 10px;
+$b-space-xs: 2.5px; /*0.25 * $b-space*/
+$b-space-s: 5px; /* 0.5 * $b-space;*/
+$b-space-l: 20px; /* 2 * $b-space;*/
+$b-space-xl: 40px; /* 4 * $b-space;*/
+
+// -------------------------------------
+//   Components
+// -------------------------------------
+
+// ----- Grid ----- //
+
+$susy: (
+  flow: ltr,
+  math: fluid,
+  output: float,
+  gutter-position: after,
+  container: auto,
+  container-position: center,
+  columns: 12,
+  gutters: .2,
+  column-width: false,
+  global-box-sizing: border-box,
+  last-flow: to,
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: true,
+  )
+);
+
+$g-small: (
+  columns: 4,
+  gutters: 0.2,
+  math: fluid,
+  gutter-position: after,
+  debug: (
+      image: hide,
+      color: rgba(blue, .08),
+      output: show,
+      toggle: top right,
+  ),
+);
+
+$g-medium: (
+  columns: 6,
+  gutters: 0.2,
+  math: fluid,
+  gutter-position: after,
+  debug: (
+      image: hide,
+      color: rgba(green, .08),
+      output: show,
+      toggle: top right,
+      ),
+);
+
+$g-large: (
+  columns: 12,
+  gutters: 0.15,
+  math: fluid,
+  gutter-position: after,
+  debug: (
+      image: hide,
+      color: rgba(black, .08),
+      output: show,
+      toggle: top right,
+  ),
+);
+
+// -------------------------------------
+//   Structures
+// -------------------------------------
+
+
