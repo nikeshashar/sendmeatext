@@ -1,13 +1,41 @@
-<div class="app">
-    <h3 class="app__title"><img src="/../img/logo-bubble.png" class="prm">Send me a text!</h3>
-    <div class="bubble">
-        <p class="bubble__description">Ask me anything and I will send an answer to your phone in the 
-        next 24 hours. </p>
+<div class="app ptm">
+    <div class="bubble mtl">
+        <p class="bubble__description"><img src="/../img/logo-bubble.png" class="prm"> Ask me anything and I will send an answer to your phone in the 
+        next 24 hours. {{appDescription}} </p>
         <form class="form">
             <textarea class="form__input"  ng-model="message" placeholder="Enter your message"></textarea>
-            <label for="sender" class="form__label mbm tss ttu tls twb" id="textbox">Enter your phone number:</label>
+            <label for="sender" class="form__label mbm tss ttu tls twb">Enter your phone number:</label>
             <input class="form__input" id="sender" name="sender" ng-model="sender" placeholder="Your Phone Number">
             <a class=" btn btn--full">Send Text</a>
         </form>
     </div>
 </div>
+
+<style wix-style>
+    body, .app {
+        background-color: {{style.bgColor}};
+    }
+    .bubble {
+        background-color: {{style.bubbleColor}};
+    }
+    .bubble:after {
+        border-color: {{style.bubbleColor}} transparent;
+    }
+    .form__label, .bubble__description {
+        color: {{style.formTextColor}};
+    }
+    .bubble__description {
+        {{style.descriptionFont Body-S}};
+    }
+    .form__label {
+        {{style.labelFont Body-S}};
+    }
+    .form__input {
+        {{style.inputFont Body-S}};
+    }
+    .btn {
+        color: {{style.buttonTextColor}};
+        background-color: {{style.buttonColor}};
+        {{style.buttonFont Body-S}};
+    }
+</style>

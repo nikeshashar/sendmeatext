@@ -1410,7 +1410,7 @@ TODO: On-the-fly button generator.
 body {
   color: #555;
   text-align: left;
-  background: #fff; }
+  background: transparent; }
 
 .app {
   background: inherit;
