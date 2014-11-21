@@ -1,7 +1,7 @@
 Send Me a Text
 ===============
 
-<!--![screenshot](https://github.com/binaryberry/sendmeatext/blob/master/public/Screenshot.png)-->
+![screenshot](https://github.com/nikeshashar/sendmeatext/blob/master/public/Screenshot.png)
 
 ## What is it?
 
